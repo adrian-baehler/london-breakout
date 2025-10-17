@@ -2,6 +2,9 @@
 
 A complete Python implementation of the London Breakout day trading strategy with risk management, backtesting, and cTrader API integration.
 
+![Alt text](https://github.com/adrian-baehler/london-breakout/blob/main/backtest_results.png)
+
+
 ## Strategy Overview
 
 The London Breakout strategy capitalizes on the increased volatility and liquidity at the opening of the London trading session (08:00 GMT). The strategy:
