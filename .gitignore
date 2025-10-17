@@ -1,0 +1,68 @@
+# Environment and credentials
+.env
+*.key
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs and data
+*.log
+*.csv
+*.db
+*.sqlite
+*.sqlite3
+
+# Reports
+*.html
+*.pdf
+reports/
+backtest_results/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Trading data
+historical_data/
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+.claude/settings.local.json

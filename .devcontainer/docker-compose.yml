@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+
+    volumes:
+      # Mount the workspace
+      - ..:/workspace:cached
+
+      # Keep command history
+      - command-history:/commandhistory
+
+      # Keep Python packages cache
+      - pip-cache:/home/vscode/.cache/pip
+
+    # Overrides default command so things don't shut down after the process ends
+    command: sleep infinity
+
+    # Use the default network
+    network_mode: bridge
+
+    # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function
+    # network_mode: service:db
+
+    # Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root
+    # user: root
+
+    # Security options
+    security_opt:
+      - seccomp:unconfined
+
+    # Environment variables
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DISPLAY=${DISPLAY:-:0}
+
+    # Port mappings
+    ports:
+      - "8888:8888"  # Jupyter Lab
+      - "5000:5000"  # Flask (if needed)
+
+volumes:
+  command-history:
+  pip-cache:
